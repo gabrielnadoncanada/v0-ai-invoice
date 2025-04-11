@@ -1,0 +1,244 @@
+export type Database = {
+  public: {
+    Tables: {
+      clients: {
+        Row: {
+          id: string
+          nom: string
+          email: string
+          telephone: string | null
+          adresse: string | null
+          ville: string | null
+          code_postal: string | null
+          pays: string | null
+          siret: string | null
+          tva: string | null
+          date_creation: string
+        }
+        Insert: {
+          id?: string
+          nom: string
+          email: string
+          telephone?: string | null
+          adresse?: string | null
+          ville?: string | null
+          code_postal?: string | null
+          pays?: string | null
+          siret?: string | null
+          tva?: string | null
+          date_creation?: string
+        }
+        Update: {
+          id?: string
+          nom?: string
+          email?: string
+          telephone?: string | null
+          adresse?: string | null
+          ville?: string | null
+          code_postal?: string | null
+          pays?: string | null
+          siret?: string | null
+          tva?: string | null
+          date_creation?: string
+        }
+      }
+      produits: {
+        Row: {
+          id: string
+          nom: string
+          description: string | null
+          prix: number
+          tva: number
+          unite: string | null
+          reference: string | null
+          date_creation: string
+          actif: boolean | null
+        }
+        Insert: {
+          id?: string
+          nom: string
+          description?: string | null
+          prix: number
+          tva: number
+          unite?: string | null
+          reference?: string | null
+          date_creation?: string
+          actif?: boolean | null
+        }
+        Update: {
+          id?: string
+          nom?: string
+          description?: string | null
+          prix?: number
+          tva?: number
+          unite?: string | null
+          reference?: string | null
+          date_creation?: string
+          actif?: boolean | null
+        }
+      }
+      factures: {
+        Row: {
+          id: string
+          numero: string
+          client_id: string
+          client_nom: string
+          date_emission: string
+          date_echeance: string
+          montant_ht: number
+          montant_ttc: number
+          statut: "brouillon" | "envoyée" | "payée" | "annulée"
+          notes: string | null
+          conditions_paiement: string | null
+        }
+        Insert: {
+          id?: string
+          numero: string
+          client_id: string
+          client_nom: string
+          date_emission: string
+          date_echeance: string
+          montant_ht: number
+          montant_ttc: number
+          statut: "brouillon" | "envoyée" | "payée" | "annulée"
+          notes?: string | null
+          conditions_paiement?: string | null
+        }
+        Update: {
+          id?: string
+          numero?: string
+          client_id?: string
+          client_nom?: string
+          date_emission?: string
+          date_echeance?: string
+          montant_ht?: number
+          montant_ttc?: number
+          statut?: "brouillon" | "envoyée" | "payée" | "annulée"
+          notes?: string | null
+          conditions_paiement?: string | null
+        }
+      }
+      lignes_facture: {
+        Row: {
+          id: string
+          facture_id: string
+          produit_id: string
+          produit_nom: string
+          quantite: number
+          prix_unitaire: number
+          tva: number
+          remise: number | null
+          montant_ht: number
+          montant_ttc: number
+        }
+        Insert: {
+          id?: string
+          facture_id: string
+          produit_id: string
+          produit_nom: string
+          quantite: number
+          prix_unitaire: number
+          tva: number
+          remise?: number | null
+          montant_ht: number
+          montant_ttc: number
+        }
+        Update: {
+          id?: string
+          facture_id?: string
+          produit_id?: string
+          produit_nom?: string
+          quantite?: number
+          prix_unitaire?: number
+          tva?: number
+          remise?: number | null
+          montant_ht?: number
+          montant_ttc?: number
+        }
+      }
+      business_settings: {
+        Row: {
+          id: string
+          name: string
+          logo: string | null
+          address: string | null
+          city: string | null
+          postal_code: string | null
+          country: string | null
+          phone: string | null
+          email: string | null
+          website: string | null
+          siret: string | null
+          tva_number: string | null
+          default_tva_rate: number
+          invoice_prefix: string
+          invoice_next_number: number
+          primary_color: string | null
+          secondary_color: string | null
+          terms_and_conditions: string | null
+          bank_details: string | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          name: string
+          logo?: string | null
+          address?: string | null
+          city?: string | null
+          postal_code?: string | null
+          country?: string | null
+          phone?: string | null
+          email?: string | null
+          website?: string | null
+          siret?: string | null
+          tva_number?: string | null
+          default_tva_rate: number
+          invoice_prefix: string
+          invoice_next_number: number
+          primary_color?: string | null
+          secondary_color?: string | null
+          terms_and_conditions?: string | null
+          bank_details?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          name?: string
+          logo?: string | null
+          address?: string | null
+          city?: string | null
+          postal_code?: string | null
+          country?: string | null
+          phone?: string | null
+          email?: string | null
+          website?: string | null
+          siret?: string | null
+          tva_number?: string | null
+          default_tva_rate?: number
+          invoice_prefix?: string
+          invoice_next_number?: number
+          primary_color?: string | null
+          secondary_color?: string | null
+          terms_and_conditions?: string | null
+          bank_details?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+      }
+    }
+    Views: {
+      [_ in never]: never
+    }
+    Functions: {
+      [_ in never]: never
+    }
+    Enums: {
+      [_ in never]: never
+    }
+    CompositeTypes: {
+      [_ in never]: never
+    }
+  }
+}
