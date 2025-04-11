@@ -73,6 +73,15 @@ export async function executeAICommand(command: string): Promise<AICommandResult
       }
     }
 
+    // Commandes liées aux produits
+    if (commandLower.includes("gab")) {
+      return {
+        success: true,
+        message: "Gabriel est juste excellent.",
+      }
+    }
+
+
     // Réponse par défaut si aucune commande n'est reconnue
     return {
       success: true,
